@@ -1,0 +1,109 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.allSeasonPanel {
+  /*display: flex;
+  flex-direction: row;*/
+  width: 100%;
+}
+
+.allSeasonPanel .season-panel {
+  margin: 5px;
+  width:400px;
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px lightgrey;
+  cursor: pointer;
+}
+
+.allSeasonPanel .season-panel h3 {
+  margin: 0;
+  padding: 0;
+  height: 32px;
+  background-color: lightskyblue;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-weight: bold;
+}
+
+.allSeasonPanel .season-panel:hover h3
+{
+  background-color: dodgerblue;
+}
+
+.allSeasonPanel .season-panel p.season-body {
+  background-color: #fefefe;
+  margin: 0;
+  padding: 0;
+}
+
+.allSeasonPanel .season-panel:hover p.season-body {
+  background-color: #f0f0f0;
+}
+
+.allSeasonPanel .season-panel p.season-body:last-child {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.allSeasonPanel .season-panel p.season-body span {
+  font-style: italic;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  width: 40px;
+  text-align: left;
+}
+
+.allSeasonPanel .season-panel p.season-body span.month {
+  font-style: normal;
+  font-weight: bold;
+  width: 80px;
+}
+
+.allSeasonPanel .season-panel p.season-body span.min {
+  font-style: normal;
+    font-weight: bold;
+    color:cornflowerblue;
+}
+
+.allSeasonPanel .season-panel p.season-body span.max {
+  font-style: normal;
+  font-weight: bold;
+  color: crimson;
+}
+
+.allSeasonPanel .season-panel p.season-body span.average {
+  font-style: normal;
+  font-weight: bold;
+  color: forestgreen;
+}
+
+.month-view-panel {
+  width: 100%;
+  border: 1px solid deepskyblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.month-view-panel span.date-label {
+  display: inline-block;
+  width: 150px;
+}
+
+.month-view-panel span.hour-label {
+  display: inline-block;
+  width: 150px;
+}
+
+.month-view-panel span.temperature-label {
+  display: inline-block;
+  width: calc(100% - 300px);
+  background-color: whitesmoke;
+}
