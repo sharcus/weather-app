@@ -85,11 +85,13 @@
 }
 
 .month-view-panel {
-  width: 100%;
-  border: 1px solid deepskyblue;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    width: calc(100% - 100px);
+      border: 1px solid deepskyblue;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow-x: auto;
+      height: 550px;
 }
 
 .month-view-panel span.date-label {

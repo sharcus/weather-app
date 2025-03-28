@@ -1,6 +1,8 @@
 import { useParams, Link } from "react-router"
 import { useState, useEffect } from "react";
-import { getMonthName } from "../BusinessLogic/dateHelper";
+import { getMonthName, getShortMonthName } from "../BusinessLogic/dateHelper";
+import parseMonthData from "../BusinessLogic/MonthTemperatureParse";
+import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
 
 export default function Month() {
     const params = useParams();
@@ -12,7 +14,9 @@ export default function Month() {
         const url = `http://localhost:8009/WeatherMonthly?year=${params.year}&month=${params.month}`;
         const response = await fetch(url);
         const json = await response.json();
-        setData(json);
+        const monthLabel = getShortMonthName(params.month);
+        var monthlyData = parseMonthData(json, monthLabel);
+        setData(monthlyData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -27,17 +31,17 @@ export default function Month() {
     
     return (
         <>
-                    <h3>Monthly tempertaure for {monthName} {params.year}</h3>
+            <h3>Monthly tempertaure for {monthName} {params.year}</h3>
             <Link to="/">Move Back</Link>
                     <div className="month-view-panel">
             <br />
             <div>
-                {data.map(function(item, itemIndex){
-                    return (<p key={itemIndex}>
-                        <span className="date-label">{item.date}</span>
-                        <span className="hour-label">{item.hour}</span>
-                        <span className="temperature-label">{item.temperature}</span></p>);
-                })}
+              <LineChart width={3600} height={500} data={data}>
+                <Line type="monotone" dataKey="tmp" stroke="#8884d8" />
+                <CartesianGrid stroke="#ccc" />
+                <XAxis dataKey="name" />
+                <YAxis />
+              </LineChart>
             </div>
         </div>
 

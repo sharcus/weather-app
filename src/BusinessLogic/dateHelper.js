@@ -14,3 +14,20 @@ export function getMonthName(monthNum) {
       return monthNum.toString();
   }
 }
+
+export function getShortMonthName(monthNum) {
+  switch (monthNum) {
+    case "11":
+      return "Nov";
+    case "12":
+      return "Dec";
+    case "1":
+      return "Jan";
+    case "2":
+      return "Feb";
+    case "3":
+      return "Mar";
+    default:
+      return monthNum.toString();
+  }
+}
