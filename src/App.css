@@ -26,6 +26,7 @@
   padding: 0;
   height: 32px;
   background-color: lightskyblue;
+  color: black;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   font-weight: bold;
@@ -34,6 +35,7 @@
 .allSeasonPanel .season-panel:hover h3
 {
   background-color: dodgerblue;
+  color: white;
 }
 
 .allSeasonPanel .season-panel p.season-body {
@@ -148,13 +150,25 @@
   margin: 0 10px;
   border-radius: 5px;
   background-color: white;
-    color: #646cff;
-    border: 1px solid #646cff;
+    color: lightskyblue;
+    border: 1px solid lightskyblue;
   height: 24px;
 }
 
+.nav-panel a:hover {
+      color: dodgerblue;
+        border: 1px solid dodgerblue;
+        background-color: white;
+}
+
 .nav-panel a.home {
-  background-color: #646cff;
-    color: white;
-    border: 1px solid #646cff;
+  background-color: lightskyblue;
+    color: black;
+    border: 1px solid lightskyblue;
+}
+
+.nav-panel a.home:hover {
+    background-color: dodgerblue;
+      border: 1px solid dodgerblue;
+      color: white;
 }
